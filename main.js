@@ -115,8 +115,7 @@ function UiCompute()
     
     // do computations
     var convexHull = CalcConvexHull(points);
-    var maer = new MinAreaEnclosingRect(convexHull);
-    var oobb = maer.Compute(); // draws OOBB candidates
+    var oobb = CalcOobb(convexHull); // draws OOBB candidates
     var aabb = CalcAabb(points);
 
     // paint infos
