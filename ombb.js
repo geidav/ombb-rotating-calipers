@@ -1,18 +1,18 @@
 function IntersectLines(start0, dir0, start1, dir1)
 {
-  var dd = dir0.x*dir1.y-dir0.y*dir1.x;
-  // dd=0 => lines are parallel. we don't care as our lines are never parallel.
-  var dx = start1.x-start0.x; 
-  var dy = start1.y-start0.y;
-  var t = (dx*dir1.y-dy*dir1.x)/dd; 
-  return new Vector(start0.x+t*dir0.x, start0.y+t*dir0.y); 
+    var dd = dir0.x*dir1.y-dir0.y*dir1.x;
+    // dd=0 => lines are parallel. we don't care as our lines are never parallel.
+    var dx = start1.x-start0.x; 
+    var dy = start1.y-start0.y;
+    var t = (dx*dir1.y-dy*dir1.x)/dd; 
+    return new Vector(start0.x+t*dir0.x, start0.y+t*dir0.y); 
 }
 
 // computes the minimum area enclosing rectangle
-// (aka optimal oriented bounding box)
-function CalcOobb(convexHull)
+// (aka oriented minimum bounding box)
+function CalcOmbb(convexHull)
 {   
-    this.UpdateMinAreaRect = function(leftStart, leftDir, rightStart, rightDir, topStart, topDir, bottomStart, bottomDir)
+    this.UpdateOmbb = function(leftStart, leftDir, rightStart, rightDir, topStart, topDir, bottomStart, bottomDir)
     {  
         var obbUpperLeft = IntersectLines(leftStart, leftDir, topStart, topDir);
         var obbUpperRight = IntersectLines(rightStart, rightDir, topStart, topDir);
@@ -151,7 +151,7 @@ function CalcOobb(convexHull)
             break;
         }                   
         
-        this.UpdateMinAreaRect(convexHull[leftIdx], leftDir, convexHull[rightIdx], rightDir, convexHull[topIdx], topDir, convexHull[bottomIdx], bottomDir);
+        this.UpdateOmbb(convexHull[leftIdx], leftDir, convexHull[rightIdx], rightDir, convexHull[topIdx], topDir, convexHull[bottomIdx], bottomDir);
     }
 
     return BestObb;

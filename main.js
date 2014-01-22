@@ -115,7 +115,7 @@ function UiCompute()
     
     // do computations
     var convexHull = CalcConvexHull(points);
-    var oobb = CalcOobb(convexHull); // draws OOBB candidates
+    var oobb = CalcOmbb(convexHull); // draws OOBB candidates
     var aabb = CalcAabb(points);
 
     // paint infos
