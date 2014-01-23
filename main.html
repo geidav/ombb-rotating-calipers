@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Computing OOBBs</title>
-		<style>
-			body
-			{
-				font-family: Arial;
-				font-size: 12px;
-			}
-		</style>
-	</head>
-	<body onload="UiCompute()">		
-		<canvas id="canvas" width="1100" height="650"></canvas>	
-		<script>
-			var canvas = document.getElementById("canvas");
-			var logdiv = document.getElementById("log");
-			var context = canvas.getContext("2d");    
-		</script>
-		<script src="vector.js"></script>
-		<script src="ombb.js"></script>
-		<script src="convexhull.js"></script>
-  		<script src="main.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <title>Computing OOBBs</title>
+        <style>
+            body
+            {
+                font-family: Arial;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body onload="UiCompute()">     
+        <canvas id="canvas" width="1100" height="650"></canvas> 
+        <script>
+            var canvas = document.getElementById("canvas");
+            var logdiv = document.getElementById("log");
+            var context = canvas.getContext("2d");    
+        </script>
+        <script src="vector.js"></script>
+        <script src="ombb.js"></script>
+        <script src="convexhull.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
