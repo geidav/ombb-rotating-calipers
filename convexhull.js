@@ -1,11 +1,13 @@
-var ON = 0;
-var LEFT = 1;
+var EPS    = 0.0001;
+
+var ON    = 0;
+var LEFT  = 1;
 var RIGHT = 2;
 
 function GetSideOfLine(lineStart, lineEnd, point)
 {
     var d = (lineEnd.x-lineStart.x)*(point.y-lineStart.y)-(lineEnd.y-lineStart.y)*(point.x-lineStart.x);
-    return (d > 0.1 ? LEFT : (d < -0.1 ? RIGHT : ON));
+    return (d > EPS ? LEFT : (d < -EPS ? RIGHT : ON));
 }
 
 // returns convex hull in CW order
