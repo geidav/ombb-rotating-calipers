@@ -49,8 +49,8 @@ function CalcOmbb(convexHull)
     }
     
     // compute extreme points
-    var minPt = new Vector(Number.MAX_VALUE, Number.MAX_VALUE);
-    var maxPt = new Vector(Number.MIN_VALUE, Number.MIN_VALUE);
+    var minPt = new Vector(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
+    var maxPt = new Vector(Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY);
     var leftIdx, rightIdx, topIdx, bottomIdx;
    
     for (var i=0; i<convexHull.length; i++)
